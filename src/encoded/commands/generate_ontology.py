@@ -119,6 +119,28 @@ organ_slims = {
     'UBERON:0001744': 'lymphoid tissue'
 }
 
+cell_slims = {
+    'CL:0000066': 'epithelial cell',
+    'CL:0000236': 'B cell',
+    'CL:0000542': 'lymphocyte',
+    'CL:0000192': 'smooth muscle cell',
+    'CL:0000057': 'fibroblast',
+    'CL:0000576': 'monocyte',
+    'CL:0000451': 'dendritic cell',
+    'CL:0000312': 'keratinocyte',
+    'CL:0000148': 'melanocyte',
+    'CL:0002372': 'myotube',
+    'CL:0000056': 'myoblast',
+    'CL:0002319': 'neural cell',
+    'CL:0000738': 'leukocyte',
+    'CL:0000084': 'T cell',
+    'CL:0000988': 'hematopoietic cell',
+    'CL:0000182': 'hepatocyte',
+    'EFO:0001639': 'cancer cell line',
+    'CL:0000062': 'osteoblast',
+    'CL:0002494': 'cardiocyte'
+}
+
 assay_slims = {
     # Note shortened synonyms are provided
     'OBI:0000634': 'DNA methylation',  # 'DNA methylation profiling'
@@ -960,6 +982,8 @@ def getSlims(goid, terms, slimType):
         slimTerms = developental_slims
     elif slimType == 'organ':
         slimTerms = organ_slims
+    elif slimType == 'cell':
+        slimTerms = cell_slims
     elif slimType == 'system':
         slimTerms = system_slims
     elif slimType == 'assay':
