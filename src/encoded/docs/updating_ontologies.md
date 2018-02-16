@@ -39,7 +39,7 @@ How to update the ontology versions
 6.  Update the following information
     
     Site release version: 66   
-    ontology.json file: ontology-2018-01-25.json   
+    ontology.json file: ontology-2018-02-16.json   
     [UBERON release date]: 2017-10-28   
     [OBI release date]: 2017-11-07   
     [EFO release date]: 2017-10-16
