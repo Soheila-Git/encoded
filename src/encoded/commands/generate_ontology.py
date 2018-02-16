@@ -1023,6 +1023,7 @@ def getTermStructure():
         'develops_from': [],
         'achieves_planned_objective': [],
         'organs': [],
+        'cell': [],
         'closure': [],
         'slims': [],
         'data': [],
@@ -1139,6 +1140,7 @@ def main():
 
         terms[term]['systems'] = getSlims(term, terms, 'system')
         terms[term]['organs'] = getSlims(term, terms, 'organ')
+        terms[term]['cells'] = getSlims(term, terms, 'cell')
         terms[term]['developmental'] = getSlims(term, terms, 'developmental')
         terms[term]['assay'] = getSlims(term, terms, 'assay')
         terms[term]['category'] = getSlims(term, terms, 'category')
