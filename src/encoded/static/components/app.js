@@ -78,7 +78,7 @@ const portal = {
 
 
 // Create the initial cart on page load.
-const initialCart = { cartItems: [], name: 'Untitled' };
+const initialCart = { cart: [], name: 'Untitled' };
 const cartStore = createStore(cartReducer, initialCart);
 
 
