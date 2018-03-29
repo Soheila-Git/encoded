@@ -99,7 +99,8 @@ class Experiment(Dataset,
     rev.update({
         'replicates': ('Replicate', 'experiment'),
         'related_series': ('Series', 'related_datasets'),
-        'superseded_by': ('Experiment', 'supersedes')
+        'superseded_by': ('Experiment', 'supersedes'),
+        'carts': ('Cart', 'items')
     })
 
     @calculated_property(schema={
@@ -419,6 +420,18 @@ class Experiment(Dataset,
                 return 'isogenic'
 
         return 'anisogenic'
+
+    @calculated_property(schema={
+        "title": "Carts including this item",
+        "type": "array",
+        "items": {
+            "type": ['string', 'object'],
+            "linkFrom": "Cart.items",
+        },
+        "notSubmittable": True,
+    })
+    def carts(self, request, carts):
+        return paths_filtered_by_status(request, carts)
 
     matrix = {
         'y': {

@@ -13,7 +13,6 @@ logger.setLevel(logging.INFO)  # doesn't work to shut off sqla INFO
 
 ORDER = [
     'user',
-    'cart',
     'award',
     'lab',
     'organism',
@@ -75,7 +74,8 @@ ORDER = [
     'histone_chipseq_quality_metric',
     'generic_quality_metric',
     'image',
-    'page'
+    'page',
+    'cart'
 ]
 
 IS_ATTACHMENT = [
