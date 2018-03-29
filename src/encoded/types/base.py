@@ -1,4 +1,7 @@
 from functools import lru_cache
+from snovault import (
+    calculated_property,
+)
 from pyramid.security import (
     ALL_PERMISSIONS,
     Allow,
@@ -130,6 +133,9 @@ class Item(snovault.Item):
         'revoked': ALLOW_CURRENT,
 
         'archived': ALLOW_CURRENT,
+    }
+    rev = {
+        'carts': ('Cart', 'items'),
     }
 
     @property
