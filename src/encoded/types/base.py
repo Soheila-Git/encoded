@@ -134,9 +134,6 @@ class Item(snovault.Item):
 
         'archived': ALLOW_CURRENT,
     }
-    rev = {
-        'carts': ('Cart', 'items'),
-    }
 
     @property
     def __name__(self):
