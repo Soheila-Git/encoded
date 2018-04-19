@@ -993,9 +993,9 @@ class App extends React.Component {
                     <div id="slot-application">
                         <div id="application" className={appClass}>
                             <div className="loading-spinner" />
-                            <Provider store={cartStore}>
-                                <div>
-                                    <div id="layout">
+                            <div id="layout">
+                                <Provider store={cartStore}>
+                                    <div>
                                         <Navigation isHomePage={isHomePage} />
                                         <div id="content" className={containerClass} key={key}>
                                             {content}
@@ -1003,8 +1003,8 @@ class App extends React.Component {
                                         {errors}
                                         <div id="layout-footer" />
                                     </div>
-                                </div>
-                            </Provider>
+                                </Provider>
+                            </div>
                             <Footer version={this.props.context.app_version} />
                         </div>
                     </div>
