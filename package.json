@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest --silent",
     "build": "gulp build",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "cypress:open": "cypress open"
   },
   "author": "",
   "license": "MIT",
@@ -34,10 +35,12 @@
     "babel-preset-react": "^6.16.0",
     "babel-register": "^6.22.0",
     "css-loader": "^0.26.1",
+    "cypress": "^2.1.0",
     "enzyme": "^2.8.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "espree": "^3.3.2",
