@@ -958,7 +958,7 @@ class Facet extends React.Component {
 
         if ((terms.length && terms.some(term => term.doc_count)) || (field.charAt(field.length - 1) === '!')) {
             return (
-                <div className="facet">
+                <div className="facet" data-test={`facet-${title}`}>
                     <h5>{titleComponent}</h5>
                     <ul className="facet-list nav">
                         <div>
@@ -1406,7 +1406,7 @@ export class ResultTable extends React.Component {
 
                         {context.notification === 'Success' ?
                             <div>
-                                <h4>Showing {results.length} of {total} {label}</h4>
+                                <h4 data-test="search-results">Showing {results.length} of {total} {label}</h4>
                                 <div className="results-table-control">
                                     {context.views ?
                                         <div className="btn-attached">
