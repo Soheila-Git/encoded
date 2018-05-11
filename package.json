@@ -6,7 +6,9 @@
     "test": "jest --silent",
     "build": "gulp build",
     "dev": "gulp dev",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "start": "http-server -p 8888 -c-1",
+    "start:ci": "http-server -p 8888 -c-1 --silent"
   },
   "author": "",
   "license": "MIT",
@@ -76,6 +78,7 @@
     "domready": "^0.3.0",
     "form-serialize": "^0.6.0",
     "google-analytics": "file:node_shims/google-analytics",
+    "http-server": "^0.11.1",
     "immutable": "^3.7.5",
     "jsonschema": "^1.1.0",
     "marked": "^0.3.3",
