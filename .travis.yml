@@ -31,12 +31,6 @@ env:
     - ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.deb
     - PATH="/usr/share/elasticsearch/bin:/usr/lib/postgresql/9.3/bin:$PATH"
     - ES_JAVA_OPTS="-Xms2g -Xmx2g"
-matrix:
-  include:
-    - python: "3.4.3"
-      env: BROWSER=Chrome
-    - python: "3.4.3"
-      env: BROWSER=
 before_install:
   - postgres --version
   - initdb --version
