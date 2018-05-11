@@ -1,7 +1,7 @@
 /* global cy */
 describe('encoded test', () => {
     it('goes to the search page from the home page', () => {
-        cy.visit('http://localhost:6543');
+        cy.visit('http://localhost:8888');
         cy.get('#navbar').within(() => {
             cy.contains('Data').click();
             cy.contains('Search').click();
