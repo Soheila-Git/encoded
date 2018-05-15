@@ -339,6 +339,9 @@ div.meta-status {
             font-size: 0.9rem;
         }
 
+        &:last-child {
+            border-bottom: none;
+        }
     }
 
     &:before {
