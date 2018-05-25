@@ -1333,6 +1333,7 @@ const BrowserTabQuickView = function BrowserTabQuickView() {
 };
 
 
+// Display the list of search results.
 export const ResultTableList = (props) => {
     const { results, columns, tabbed } = props;
     return (
