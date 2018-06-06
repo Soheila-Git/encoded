@@ -17,7 +17,7 @@ from .base import (
 
 def includeme(config):
     config.scan()
-    config.add_route('carts', '/carts{slash:/?}')
+    config.add_route('cart', '/cart-view{slash:/?}')
 
 
 @collection(
@@ -258,20 +258,20 @@ class SoftwareVersion(Item):
 @collection(
     name='carts',
     properties={
-        'title': 'Carts',
-        'description': 'Listing of carts',
+        'title': 'Cart',
+        'description': 'Listing of cart contents',
     })
 class Cart(Item):
     item_type = 'cart'
     schema = load_schema('encoded:schemas/cart.json')
 
 
-@view_config(route_name='carts', request_method='GET', permission='search')
-def carts(context, request):
+@view_config(route_name='cart', request_method='GET', permission='search')
+def cart(context, request):
     result = {
-        '@id': '/carts/',
-        '@type': ['carts'],
-        'title': 'Carts',
+        '@id': '/cart-view/',
+        '@type': ['cart-view'],
+        'title': 'Cart',
         'facets': [],
         '@graph': [],
         'columns': OrderedDict(),
