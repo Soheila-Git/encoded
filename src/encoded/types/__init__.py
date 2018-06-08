@@ -16,7 +16,7 @@ from .base import (
 
 
 def includeme(config):
-    config.scan()
+    config.scan(__name__)
     config.add_route('cart', '/cart-view{slash:/?}')
 
 
