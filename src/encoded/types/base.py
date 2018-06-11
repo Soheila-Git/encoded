@@ -1,7 +1,4 @@
 from functools import lru_cache
-from snovault import (
-    calculated_property,
-)
 from pyramid.security import (
     ALL_PERMISSIONS,
     Allow,
