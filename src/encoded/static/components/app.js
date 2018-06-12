@@ -82,7 +82,7 @@ const portal = {
 const initialCart = {
     cart: [], // Active cart contents as array of @ids
     name: 'Untitled',
-    savedCartObj: {}, // Cache of saved cart
+    savedCart: [], // Cache of saved cart
 };
 const cartStore = createStore(cartModule, initialCart);
 
@@ -172,13 +172,21 @@ class Timeout {
 }
 
 
+/**
+ * Retrieve the cart contents as a list of item @ids for the current logged-in user and initialize
+ * the active cart with this list.
+ *
+ * @param {object} sessionProperties - encoded session_properties object for logged-in user
+ * @return {object} - Promise with cart content item @ids or null if none
+ */
 const initializeCartFromSessionProperties = function initializeCartFromSessionProperties(sessionProperties) {
     return requestSearch(`type=Cart&submitted_by=${sessionProperties.user['@id']}`).then((results) => {
-        // If the logged-in user has a cart, add it to the in-memory cart.
+        // If the logged-in user has a cart, add it to the in-memory cart. For now just use the
+        // first cart found until we support multiple carts per user.
         if (Object.keys(results).length > 0 && results['@graph'].length > 0) {
             const cart = results['@graph'][0].items;
             cartAddItems(cart, cartStore.dispatch);
-            cartCacheSaved(cart, cartStore.dispatch);
+            cartCacheSaved(results['@graph'][0], cartStore.dispatch);
             return Promise.resolve(cart);
         }
         return Promise.resolve(null);
@@ -467,9 +475,6 @@ class App extends React.Component {
             return response.json();
         }).then((sessionProperties) => {
             this.setState({ session_properties: sessionProperties });
-
-            // If the user has a saved cart (for v72 assume one cart per user) we need to do a GET
-            // request on the cart object to fill the in-memory Redux cart.
             return initializeCartFromSessionProperties(sessionProperties);
         });
     }
@@ -496,7 +501,6 @@ class App extends React.Component {
         }).then((sessionProperties) => {
             this.setState({ session_properties: sessionProperties });
             this.sessionPropertiesRequest = null;
-
             return initializeCartFromSessionProperties(sessionProperties);
         }).then(() => {
             let nextUrl = window.location.href;
@@ -856,6 +860,7 @@ class App extends React.Component {
         return request;
     }
 
+    /* eslint-disable class-methods-use-this */
     fallbackNavigate(href, fragment, options) {
         // Navigate using window.location
         if (options.replace) {
@@ -868,6 +873,7 @@ class App extends React.Component {
             }
         }
     }
+    /* eslint-enable class-methods-use-this */
 
     receiveContextResponse(data) {
         // title currently ignored by browsers
