@@ -3,6 +3,10 @@
 ### Schema version 8
 
 * Move status property to standard_status mixin.
+* Added "targeted_genes" property for the list of genes targeted by assay or antibody associated with the target.
+* Added calculated property "computed_name" to reflect gene name (and name changes) in target name.
+* Added "modification" property to facilitate automatic name calculation.
+* The "label" property is modified to clarify that it is a DCC defined only, human friendly, free textual target name. Target prefers "label" to "computed_name".
 
 ### Schema version 7
 

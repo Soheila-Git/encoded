@@ -38,6 +38,20 @@
             "type": "string",
             "linkTo": "Organism"
         },
+        "targeted_genes": {
+            "title": "Targeted genes",
+            "description": "List of gene(s) that are targeted by corrsponding assay or antibody.",
+            "comment": "See gene.json for available identifiers and details.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "title": "Targeted Gene",
+                "description": "A gene that are targeted by corrsponding assay or antibody.",
+                "comment": "See gene.json for available identifiers.",
+                "type": "string",
+                "linkTo": "Gene"
+            }
+        },
         "gene_name": {
             "title": "Gene name",
             "description": "HGNC or MGI identifier for the target.",
@@ -45,10 +59,31 @@
             "type": "string",
             "format": "gene_name"
         },
+        "modification": {
+            "title": "Modification to the corresponding gene.",
+            "description": "One of the modifications listed in the enum made to the corresponding gene in this target.",
+            "comment": "This property will be used to calculate the proper label of the target. It is a restricted property and should be a single string describing all modifications (even for cases like multiple tags). See computed_label property for details about automatic label calculation.",
+            "type": "string",
+            "enum": [
+                "3xFLAG",
+                "6XHis",
+                "DsRed",
+                "eGFP",
+                "ER",
+                "FLAG",
+                "GFP",
+                "HA",
+                "mCherry",
+                "T2A",
+                "TRE",
+                "V5",
+                "YFP"
+            ]
+        },
         "label": {
-            "title": "Common name with modification",
-            "description": "Common name for the target including post-translational modifications, if any.",
-            "comment": "Submit the common name of the gene with modification (e.g. H3K4me3, eGFP-E2F1, or POLR2AphosphoS2).",
+            "title": "Preferred target label",
+            "description": "An easy to understand label preferred over  computed label.",
+            "comment": "Do not submit. DCC personnel is responsible for submission of this property. In general, the format is the common name of the gene with modification (e.g. H3K4me3, eGFP-E2F1, or POLR2AphosphoS2).",
             "type": "string",
             "format": "target_label"
         },
@@ -82,6 +117,9 @@
         },
         "investigated_as": {
             "title": "Target of assay"
+        },
+        "modification": {
+            "title": "Modification in targets"
         }
     },
     "columns": {
@@ -99,12 +137,15 @@
         }
     },
     "boost_values": {
-        "gene_name": 1.0, 
-        "label": 1.0, 
-        "dbxref": 1.0, 
-        "aliases": 1.0, 
-        "organism.name": 1.0,  
-        "organism.scientific_name": 1.0, 
+        "targeted_genes.geneid": 1.0,
+        "targeted_genes.symbol": 1.0,
+        "gene_name": 1.0,
+        "modification": 1.0,
+        "label": 1.0,
+        "dbxref": 1.0,
+        "aliases": 1.0,
+        "organism.name": 1.0,
+        "organism.scientific_name": 1.0,
         "organism.taxon_id": 1.0
     },
     "changelog": "/profiles/changelogs/target.md"

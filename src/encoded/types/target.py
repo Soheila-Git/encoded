@@ -21,7 +21,7 @@ from pyramid.traversal import (
 class Target(SharedItem):
     item_type = 'target'
     schema = load_schema('encoded:schemas/target.json')
-    embedded = ['organism']
+    embedded = ['organism', 'targeted_genes']
 
     def unique_keys(self, properties):
         keys = super(Target, self).unique_keys(properties)
@@ -61,3 +61,13 @@ class Target(SharedItem):
         properties = self.upgrade_properties()
         request._linked_uuids.add(str(properties['organism']))
         return None
+
+    @calculated_property(schema={
+        "title": "Computed label",
+        "type": "string",
+        "format": "target_label"
+    })
+    def computed_label(self, request, targeted_genes=[], modification=""):
+        gene_symbols = [request.embed(gene, '@@object')['symbol']
+                        for gene in targeted_genes]
+        return '-'.join(filter(bool, [modification] + gene_symbols))
