@@ -29,6 +29,70 @@ import datetime
 import json
 import pytz
 import time
+import copy
+
+
+EXTERNAL_BUCKET_POLICIES = [
+    {
+        'Action': 's3:GetObject',
+        'Resource': lambda s: 'arn:aws:s3:::%s/*' % s,
+        'Effect': 'Allow',
+    },
+    {
+        'Action': 's3:ListBucket',
+        'Resource': lambda s: 'arn:aws:s3:::%s' % s,
+        'Effect': 'Allow',
+    },
+    {
+        'Action': 's3:GetObjectAcl',
+        'Resource': lambda s: 'arn:aws:s3:::%s/*' % s,
+        'Effect': 'Allow',
+    }
+]
+
+
+def get_external_bucket_policy(file_path):
+    '''
+    Returns a compiled json of external s3 access policies for federated users
+
+    Checks if the policy json was already compiled on this instance.  If not,
+    looks for the bucket list to compile and create the policy json.
+
+    Returns
+        -A policy json with EXTERNAL_BUCKET_POLICIES statements for each
+        external bucket in the buckt list.
+        -A policy json with zero statements if neither file is found
+    '''
+    json_path = file_path + '.json'
+    policy_json = {
+        'Version': '2012-10-17',
+        'Statement': [],
+    }
+    try:
+        with open(json_path) as file_handler:
+            policy_json = json.loads(file_handler.read())
+    except FileNotFoundError:
+        try:
+            with open(file_path) as file_handler:
+                lines = list(file_handler.readlines())
+                for ext_policy in EXTERNAL_BUCKET_POLICIES:
+                    new_policy = copy.copy(ext_policy)
+                    new_policy['Resource'] = []
+                    for line in lines:
+                        line = line.strip()
+                        if line:
+                            line = line.strip()
+                            new_policy['Resource'].append(ext_policy['Resource'](line))
+                    policy_json['Statement'].append(new_policy)
+            if policy_json:
+                with open(json_path, 'w') as file_handler:
+                    json.dump(policy_json, file_handler)
+        except FileNotFoundError:
+            print(
+                'encoded.types.file.py.get_external_bucket_policy: '
+                'Could not load external bucket policy list.'
+            )
+    return policy_json
 
 
 def show_upload_credentials(request=None, context=None, status=None):
@@ -37,8 +101,8 @@ def show_upload_credentials(request=None, context=None, status=None):
     return request.has_permission('edit', context)
 
 
-def external_creds(bucket, key, name, profile_name=None):
-    policy = {
+def get_encode_upload_policy(bucket, key):
+    return {
         'Version': '2012-10-17',
         'Statement': [
             {
@@ -48,6 +112,15 @@ def external_creds(bucket, key, name, profile_name=None):
             }
         ]
     }
+
+
+def external_creds(bucket, key, name, profile_name=None, external_buckets_path=None):
+    policy = get_encode_upload_policy(bucket, key)
+    if external_buckets_path and policy and 'Statement' in policy:
+        external_policy = get_external_bucket_policy(external_buckets_path)
+        if external_policy:
+            for statement in external_policy.get('Statement', []):
+                policy['Statement'].append(statement)
     conn = boto3.Session(profile_name=profile_name).client('sts')
     token = conn.get_federation_token(
         Name=name,
@@ -375,7 +448,8 @@ class File(Item):
                 time=time.time(), **properties)[:32]  # max 32 chars
 
             profile_name = registry.settings.get('file_upload_profile_name')
-            sheets['external'] = external_creds(bucket, key, name, profile_name)
+            external_buckets_path = registry.settings.get('direct_upload_external_buckets_path')
+            sheets['external'] = external_creds(bucket, key, name, profile_name, external_buckets_path)
         return super(File, cls).create(registry, uuid, properties, sheets)
 
 
@@ -428,7 +502,8 @@ def post_upload(context, request):
         accession_or_external=accession_or_external,
         time=time.time(), **properties)[:32]  # max 32 chars
     profile_name = request.registry.settings.get('file_upload_profile_name')
-    creds = external_creds(bucket, key, name, profile_name)
+    external_buckets_path = registry.settings.get('direct_upload_external_buckets_path')
+    creds = external_creds(bucket, key, name, profile_name, external_buckets_path)
 
     new_properties = None
     if properties['status'] == 'upload failed':
