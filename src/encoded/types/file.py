@@ -51,7 +51,44 @@ EXTERNAL_BUCKET_POLICIES = [
 ]
 
 
-def get_external_bucket_policy(file_path):
+def compile_statements_from_list(buckets_list):
+    statements = []
+    for ext_policy in EXTERNAL_BUCKET_POLICIES:
+        new_policy = copy.copy(ext_policy)
+        new_policy['Resource'] = []
+        for line in lines:
+            line = line.strip()
+            if line:
+                line = line.strip()
+                new_policy['Resource'].append(ext_policy['Resource'](line))
+        statements.append(new_policy)
+
+
+def save_policy_json(policy_json, file_path):
+    with open(file_path + '.json', 'w') as file_handler:
+        json.dump(policy_json, file_handler)
+
+
+def build_external_bucket_json(file_path):
+    policy_json = {
+        'Version': '2012-10-17',
+        'Statement': [],
+    }
+    try:
+        with open(file_path) as file_handler:
+            buckets_list = [item.strip() for item in file_handler.readlines()]
+            statements = compile_statements_from_list(buckets_list)
+            policy_json['Statement'] = statements
+    except FileNotFoundError:
+        print(
+            'encoded.types.file.py.get_external_bucket_policy: '
+            'Could not load external bucket policy list.'
+        )
+    save_policy_json(policy_json, file_path)
+    return policy_json
+
+
+def get_external_bucket_policy(file_path, retry=False):
     '''
     Returns a compiled json of external s3 access policies for federated users
 
@@ -66,36 +103,13 @@ def get_external_bucket_policy(file_path):
     Can be updated on the fly.  Just append bucket names to file_path
     and delete the created json file.
     '''
-    json_path = file_path + '.json'
-    policy_json = {
-        'Version': '2012-10-17',
-        'Statement': [],
-    }
     try:
         with open(json_path) as file_handler:
-            policy_json = json.loads(file_handler.read())
+            return json.loads(file_handler.read())
     except FileNotFoundError:
-        try:
-            with open(file_path) as file_handler:
-                lines = list(file_handler.readlines())
-                for ext_policy in EXTERNAL_BUCKET_POLICIES:
-                    new_policy = copy.copy(ext_policy)
-                    new_policy['Resource'] = []
-                    for line in lines:
-                        line = line.strip()
-                        if line:
-                            line = line.strip()
-                            new_policy['Resource'].append(ext_policy['Resource'](line))
-                    policy_json['Statement'].append(new_policy)
-            if policy_json:
-                with open(json_path, 'w') as file_handler:
-                    json.dump(policy_json, file_handler)
-        except FileNotFoundError:
-            print(
-                'encoded.types.file.py.get_external_bucket_policy: '
-                'Could not load external bucket policy list.'
-            )
-    return policy_json
+        if retry:
+            build_external_bucket_json(file_path)
+            return get_external_bucket_policy(file_path)
 
 
 def show_upload_credentials(request=None, context=None, status=None):
@@ -120,7 +134,7 @@ def get_encode_upload_policy(bucket, key):
 def external_creds(bucket, key, name, profile_name=None, external_buckets_path=None):
     policy = get_encode_upload_policy(bucket, key)
     if external_buckets_path and policy and 'Statement' in policy:
-        external_policy = get_external_bucket_policy(external_buckets_path)
+        external_policy = get_external_bucket_policy(external_buckets_path, retry=True)
         if external_policy:
             for statement in external_policy.get('Statement', []):
                 policy['Statement'].append(statement)
