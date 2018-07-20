@@ -1,0 +1,110 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import _ from 'underscore';
+import * as globals from './globals';
+import { Breadcrumbs } from './navigation';
+import { ExperimentTable } from './dataset';
+import { DbxrefList, dbxrefHref } from './dbxref';
+import { RelatedItems } from './item';
+
+
+/* eslint-disable react/prefer-stateless-function */
+class Gene extends React.Component {
+    render() {
+        const context = this.props.context;
+        const itemClass = globals.itemClass(context, 'view-detail key-value');
+        let geneLink;
+        let geneRef;
+        let baseName;
+        let sep;
+
+        if (context.organism.name === 'human') {
+            geneLink = dbxrefHref('HGNC', context.gene_name);
+        } else if (context.organism.name === 'mouse') {
+            const mgiRef = _(context.dbxref).find(ref => ref.substr(0, 4) === 'MGI:');
+            if (mgiRef) {
+                geneLink = dbxrefHref('MGI', mgiRef);
+            }
+        } else if (context.organism.name === 'dmelanogaster' || context.organism.name === 'celegans') {
+            const organismPrefix = context.organism.name === 'dmelanogaster' ? 'FBgn' : 'WBGene';
+            const baseUrl = context.organism.name === 'dmelanogaster' ? globals.dbxrefPrefixMap.FlyBase : globals.dbxrefPrefixMap.WormBase;
+            geneRef = _.find(context.dbxref, ref => ref.indexOf(organismPrefix) !== -1);
+            if (geneRef) {
+                sep = geneRef.indexOf(':') + 1;
+                baseName = geneRef.substring(sep, geneRef.length);
+                geneLink = baseUrl + baseName;
+            }
+        }
+
+        // Set up breadcrumbs
+        const crumbs = [
+            { id: 'Genes' },
+            {
+                id: <i>{context.organism.scientific_name}</i>,
+                query: `organism.scientific_name=${context.organism.scientific_name}`,
+                tip: `${context.organism.scientific_name}`,
+            },
+        ];
+
+        return (
+            <div className={globals.itemClass(context, 'view-item')}>
+                <header className="row">
+                    <div className="col-sm-12">
+                        <Breadcrumbs root="/search/?type=gene" crumbs={crumbs} />
+                        <h2>{context.symbol} (<em>{context.organism.scientific_name}</em>)</h2>
+                    </div>
+                </header>
+
+                <div className="panel">
+                    <dl className={itemClass}>
+                        {/* TODO link to NCBI Entrez page? */}
+                        <div data-test="gendid">
+                            <dt>Entrez GeneID</dt>
+                            <dd>{context.geneid}</dd>
+                        </div>
+
+                        {/* TODO link to NADB page? */}
+                        {context.symbol && geneLink ?
+                            <div data-test="symbol">
+                                <dt>Gene symbol</dt>
+                                <dd><a href={geneLink}>{context.symbol}</a></dd>
+                            </div>
+                        : null}
+
+                        {context.synonyms ?
+                          <div data-test="synonyms">
+                              <dt>Synonyms</dt>
+                              <dd><ul>
+                                  {context.synonyms.map((synonym, i) =>
+                                      <li key={i}><span>{synonym}</span></li>
+                                  )}
+                              </ul></dd>
+                          </div>
+                        : null}
+
+                        <div data-test="external">
+                            <dt>External resources</dt>
+                            <dd>
+                                {context.dbxrefs.length ?
+                                    <DbxrefList context={context} dbxrefs={context.dbxrefs} />
+                                : <em>None submitted</em> }
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        );
+    }
+}
+/* eslint-enable react/prefer-stateless-function */
+
+Gene.propTypes = {
+    context: PropTypes.object, // Target object to display
+};
+
+Gene.defaultProps = {
+    context: null,
+};
+
+
+globals.contentViews.register(Gene, 'Gene');
