@@ -1,0 +1,429 @@
+[
+{
+  "uuid": "480badd7-1ef3-4888-8033-beeb295eedf0",
+  "status": "released",
+  "symbol": "ADNP",
+  "organism": "human",
+  "geneid": "23394",
+  "synonyms": ["ADNP1", "HVDAS", "MRD28"],
+  "dbxrefs": ["MIM:611386", "HGNC:HGNC:15766", "ENSEMBL:ENSG00000101126", "Vega:OTTHUMG00000032737", "UniProtKB:Q9H2P0"]
+},
+{
+  "uuid": "815d3760-aaff-4b56-8e4f-9f912f869a26",
+  "status": "released",
+  "symbol": "CTCF",
+  "organism": "human",
+  "geneid": "10664",
+  "synonyms": ["MRD21"],
+  "dbxrefs": ["MIM:604167", "HGNC:HGNC:13723", "ENSEMBL:ENSG00000102974", "Vega:OTTHUMG00000137539", "UniProtKB:P49711"]
+},
+{
+  "uuid": "2c1269e7-89a5-4f9d-894b-523e37c84be8",
+  "status": "released",
+  "symbol": "CXXC1",
+  "organism": "human",
+  "geneid": "30827",
+  "synonyms": ["2410002I16Rik", "5830420C16Rik", "CFP1", "CGBP", "HsT2645", "PCCX1", "PHF18", "SPP1", "ZCGPC1", "hCGBP"],
+  "dbxrefs": ["MIM:609150", "HGNC:HGNC:24343", "ENSEMBL:ENSG00000154832", "Vega:OTTHUMG00000132670", "UniProtKB:Q9P0U4"]
+},
+{
+  "uuid": "24824892-da4d-44a2-80e6-e5115a8cdf14",
+  "status": "released",
+  "symbol": "E2F1",
+  "organism": "human",
+  "geneid": "1869",
+  "synonyms": ["E2F-1", "RBAP1", "RBBP3", "RBP3"],
+  "dbxrefs": ["MIM:189971", "HGNC:HGNC:3113", "ENSEMBL:ENSG00000101412", "Vega:OTTHUMG00000032265", "UniProtKB:Q01094"]
+},
+{
+  "uuid": "c1bce75a-44ee-49a0-b950-926fabd6b2db",
+  "status": "released",
+  "symbol": "Hist2h3c1",
+  "organism": "mouse",
+  "geneid": "15077",
+  "synonyms": ["BE691662", "H3-615", "H3f2", "Hist2h3ca1"],
+  "dbxrefs": ["MGI:MGI:2448355", "ENSEMBL:ENSMUSG00000093769", "Vega:OTTMUSG00000021930", "UniProtKB:P84228"]
+},
+{
+  "uuid": "f57eac34-29e1-4c21-b94a-f3a2c32e4fa7",
+  "status": "released",
+  "symbol": "HIST2H3C",
+  "organism": "human",
+  "geneid": "126961",
+  "synonyms": ["H3", "H3.2", "H3/M", "H3F2", "H3FM", "H3FN"],
+  "dbxrefs": ["MIM:142780", "HGNC:HGNC:20503", "ENSEMBL:ENSG00000203811", "Vega:OTTHUMG00000012190", "UniProtKB:Q71DI3"]
+},
+{
+  "uuid": "51fe6251-4079-4467-b74a-f48f31d2e2de",
+  "status": "released",
+  "symbol": "HNRNPA1",
+  "organism": "human",
+  "geneid": "3178",
+  "synonyms": ["ALS19", "ALS20", "HNRPA1", "HNRPA1L3", "IBMPFD3", "UP 1", "hnRNP A1", "hnRNP-A1"],
+  "dbxrefs": ["MIM:164017", "HGNC:HGNC:5031", "ENSEMBL:ENSG00000135486", "Vega:OTTHUMG00000169702", "UniProtKB:P09651"]
+},
+{
+  "uuid": "7a125d82-d95b-4123-8b11-a0d6809a9106",
+  "status": "released",
+  "symbol": "TAF1",
+  "organism": "human",
+  "geneid": "6872",
+  "synonyms": ["BA2R", "CCG1", "CCGS", "DYT3", "DYT3/TAF1", "KAT4", "MRXS33", "N-TAF1", "NSCL2", "OF", "P250", "TAF(II)250", "TAF2A", "TAFII-250", "TAFII250", "XDP"],
+  "dbxrefs": ["MIM:313650", "HGNC:HGNC:11535", "ENSEMBL:ENSG00000147133", "Vega:OTTHUMG00000022723", "UniProtKB:P21675"]
+},
+{
+  "uuid": "567d7d65-0b85-4676-be8c-24c07af418d6",
+  "status": "released",
+  "symbol": "TCF4",
+  "organism": "human",
+  "geneid": "6925",
+  "synonyms": ["E2-2", "FECD3", "ITF-2", "ITF2", "PTHS", "SEF-2", "SEF2", "SEF2-1", "SEF2-1A", "SEF2-1B", "SEF2-1D", "TCF-4", "bHLHb19"],
+  "dbxrefs": ["MIM:602272", "HGNC:HGNC:11634", "ENSEMBL:ENSG00000196628", "Vega:OTTHUMG00000132713", "UniProtKB:P15884"]
+},
+{
+  "uuid": "75866336-b42b-4341-9b70-240eb469c231",
+  "status": "released",
+  "symbol": "NR2F1",
+  "organism": "human",
+  "geneid": "7025",
+  "synonyms": ["BBOAS", "BBSOAS", "COUP-TFI", "COUPTF1", "EAR-3", "EAR3", "ERBAL3", "SVP44", "TCFCOUP1", "TFCOUP1"],
+  "dbxrefs": ["MIM:132890", "HGNC:HGNC:7975", "ENSEMBL:ENSG00000175745", "Vega:OTTHUMG00000119079"],
+  "_test": "non-ascii"
+},
+{
+  "uuid": "6d4d22fb-99ee-4246-94a0-184aee5d72a1",
+  "status": "released",
+  "symbol": "mes-4",
+  "organism": "celegans",
+  "geneid": "179824",
+  "dbxrefs": ["WormBase:WBGene00003222", "UniProtKB:Q9NH52"]
+},
+{
+  "uuid": "de7d137a-dafd-46c8-99c3-111b5255e304",
+  "status": "released",
+  "symbol": "pab-1",
+  "organism": "celegans",
+  "geneid": "172920",
+  "dbxrefs": ["WormBase:WBGene00003902", "UniProtKB:Q7K797", "UniProtKB:Q9U302", "UniProtKB:Q7K798"]
+},
+{
+  "uuid": "cd05d34d-9a51-4efc-b0ec-9245a1d83b40",
+  "status": "released",
+  "symbol": "EBF1",
+  "organism": "human",
+  "geneid": "1879",
+  "synonyms": ["COE1", "EBF", "O/E-1", "OLF1"],
+  "dbxrefs": ["MIM:164343", "HGNC:HGNC:3126", "ENSEMBL:ENSG00000164330", "Vega:OTTHUMG00000130304", "UniProtKB:Q9UH73"]
+},
+{
+  "uuid": "a562a789-e89d-498f-a6e3-3fbbdd042ec3",
+  "status": "released",
+  "symbol": "cad",
+  "organism": "dmelanogaster",
+  "geneid": "35341",
+  "synonyms": ["38E.19", "CAD", "CG1759", "Cad", "Dmel\\CG1759", "S67", "anon-WO2004063362.83", "cd"],
+  "dbxrefs": ["FlyBase:FBgn0000251"]
+},
+{
+  "uuid": "08e44197-9c28-4f80-b9ef-2f420869b443",
+  "status": "released",
+  "symbol": "fkh-10",
+  "organism": "celegans",
+  "geneid": "182874",
+  "dbxrefs": ["WormBase:WBGene00001442", "UniProtKB:O17593"]
+},
+{
+  "uuid": "4e0994eb-e669-450d-99f4-7e19fc217c0a",
+  "status": "released",
+  "symbol": "FTO",
+  "organism": "human",
+  "geneid": "79068",
+  "synonyms": ["ALKBH9", "BMIQ14", "GDFD"],
+  "dbxrefs": ["MIM:610966", "HGNC:HGNC:24678", "ENSEMBL:ENSG00000140718", "Vega:OTTHUMG00000158780", "UniProtKB:Q9C0B1"]
+},
+{
+  "uuid": "6e42c31d-0fcc-4793-80e1-e93d83f33bb5",
+  "status": "released",
+  "symbol": "ab",
+  "organism": "/organisms/dmelanogaster/",
+  "geneid": "34560",
+  "synonyms": ["Ab", "B2149", "CG32830", "CG43860", "CG4807", "Dmel\\CG43860", "Dmel_CG32830", "Dmel_CG4807", "clu", "l(2)k02807", "ptd"],
+  "dbxrefs": ["FlyBase:FBgn0264442", "UniProtKB:Q9W1P8", "RefSeq:NM_079098"]
+},
+{
+  "uuid": "9a591682-cb1e-4bb1-bc24-d5093d65433a",
+  "status": "released",
+  "symbol": "HIST1H2AB",
+  "organism": "human",
+  "geneid": "8335",
+  "synonyms": ["H2A/m", "H2AFM"],
+  "dbxrefs": ["MIM:602795", "HGNC:HGNC:4734", "ENSEMBL:ENSG00000278463", "Vega:OTTHUMG00000014420", "RefSeq:NM_003513", "UniProtKB:P04908"]
+},
+{
+  "uuid": "6e23b54c-1a2e-41f5-b925-578f359f8eb7",
+  "status": "released",
+  "symbol": "HIST1H2AE",
+  "organism": "human",
+  "geneid": "3012",
+  "synonyms": ["H2A.1", "H2A.2", "H2A/a", "H2AFA"],
+  "dbxrefs": ["MIM:602786", "HGNC:HGNC:4724", "ENSEMBL:ENSG00000277075", "Vega:OTTHUMG00000014440", "RefSeq:NM_021052", "UniProtKB:P04908"]
+},
+{
+  "uuid": "17ba934c-8a56-4c02-b08c-011ad4adcde9",
+  "status": "released",
+  "symbol": "A1BG-AS1",
+  "organism": "human",
+  "geneid": "503538",
+  "synonyms": ["A1BG-AS", "A1BGAS", "NCRNA00181"],
+  "dbxrefs": ["HGNC:HGNC:37133", "ENSEMBL:ENSG00000268895", "RefSeq:NR_015380"]
+},
+{
+  "uuid": "4ceb141b-9276-485b-8865-5a833044e952",
+  "status": "released",
+  "symbol": "AATBC",
+  "organism": "human",
+  "geneid": "284837",
+  "dbxrefs": ["HGNC:HGNC:51526", "ENSEMBL:ENSG00000215458", "RefSeq:NR_026961"]
+},
+{
+  "uuid": "00522a7c-1dd0-4f8b-abe3-633c514ec760",
+  "status": "released",
+  "symbol": "ASMTL-AS1",
+  "organism": "human",
+  "geneid": "80161",
+  "synonyms": ["ASMTL-AS", "ASMTLAS", "CXYorf2", "NCRNA00105"],
+  "dbxrefs": ["HGNC:HGNC:25811", "RefSeq:XR_040863"]
+},
+{
+  "uuid": "c99ce1d3-5ca2-4cdf-85dc-d69d18f227c0",
+  "status": "released",
+  "symbol": "LINC00302",
+  "organism": "human",
+  "geneid": "388699",
+  "synonyms": ["C1orf46", "NCRNA00302", "xp33"],
+  "dbxrefs": ["HGNC:HGNC:31825", "RefSeq:NR_145430"]
+},
+{
+  "uuid": "f982bb50-dd2b-4f39-9daa-3d4445a37ffd",
+  "status": "released",
+  "symbol": "MIR1-1",
+  "organism": "human",
+  "geneid": "406904",
+  "synonyms": ["MIRN1-1", "hsa-mir-1-1", "miRNA1-1", "mir-1-1"],
+  "dbxrefs": ["MIM:609326", "HGNC:HGNC:31499", "ENSEMBL:ENSG00000199017", "miRBase:MI0000651", "RefSeq:NR_029780"]
+},
+{
+  "uuid": "c7c7722d-89c5-4c53-a314-8a67b6e129a9",
+  "status": "released",
+  "symbol": "MIR96",
+  "organism": "human",
+  "geneid": "407053",
+  "synonyms": ["DFNA50", "MIRN96", "hsa-mir-96", "miR-96", "miRNA96"],
+  "dbxrefs": ["MIM:611606", "HGNC:HGNC:31648", "ENSEMBL:ENSG00000199158", "miRBase:MI0000098", "RefSeq:NR_029512"]
+},
+{
+  "uuid": "0947ecdc-96c8-4815-ac7b-eaa75c8a21b3",
+  "status": "released",
+  "symbol": "MIR548AO",
+  "organism": "human",
+  "geneid": "100847068",
+  "dbxrefs": ["HGNC:HGNC:43539", "ENSEMBL:ENSG00000263372", "miRBase:MI0017871", "RefSeq:NR_049801"]
+},
+{
+  "uuid": "4b1bfaad-184d-4bda-9652-92c51d67e956",
+  "status": "released",
+  "symbol": "MIR3690",
+  "organism": "human",
+  "geneid": "100500894",
+  "synonyms": ["MIR3690-1", "MIR3690-2", "hsa-mir-3690-1", "hsa-mir-3690-2", "mir-3690-1", "mir-3690-2"],
+  "dbxrefs": ["HGNC:HGNC:38967", "ENSEMBL:ENSG00000265658", "miRBase:MI0016091", "RefSeq:NR_037461"]
+},
+{
+  "uuid": "63aec915-ee40-4514-8a20-e5e461d53b61",
+  "status": "released",
+  "symbol": "MT-RNR2",
+  "organism": "human",
+  "geneid": "4550",
+  "synonyms": ["RNR2"],
+  "dbxrefs": ["MIM:561010", "HGNC:HGNC:7471"]
+},
+{
+  "uuid": "f29c5f47-e473-45d3-bb0e-f2b9358f7418",
+  "status": "released",
+  "symbol": "NMTRQ-TTG12-1",
+  "organism": "human",
+  "geneid": "100189478",
+  "synonyms": ["TRNAQ41P"],
+  "dbxrefs": ["HGNC:HGNC:35051", "RefSeq:NG_008536"]
+},
+{
+  "uuid": "7b573441-ce01-423c-9160-e23b5afa0c16",
+  "status": "released",
+  "symbol": "RMRP",
+  "organism": "human",
+  "geneid": "6023",
+  "synonyms": ["CHH", "NME1", "RMRPR", "RRP2"],
+  "dbxrefs": ["MIM:157660", "HGNC:HGNC:10031", "ENSEMBL:ENSG00000269900", "RefSeq:NR_003051"]
+},
+{
+  "uuid": "3217c0b6-66ed-4446-ab42-9cc6ee337355",
+  "status": "released",
+  "symbol": "RN7SK",
+  "organism": "human",
+  "geneid": "125050",
+  "synonyms": ["7SK"],
+  "dbxrefs": ["MIM:606515", "HGNC:HGNC:10037", "ENSEMBL:ENSG00000202198", "RefSeq:NR_001445"]
+},
+{
+  "uuid": "034842a9-077f-4b8c-be10-b1d73d2c5093",
+  "status": "released",
+  "symbol": "RN7SL1",
+  "organism": "human",
+  "geneid": "6029",
+  "synonyms": ["7L1a", "7SL", "RN7SL", "RNSRP1"],
+  "dbxrefs": ["MIM:612177", "HGNC:HGNC:10038", "ENSEMBL:ENSG00000276168", "RefSeq:NR_002715"]
+},
+{
+  "uuid": "d120b568-9ec0-4dfd-8655-2a1d30386203",
+  "status": "released",
+  "symbol": "RNA5-8SN5",
+  "organism": "human",
+  "geneid": "100008587",
+  "synonyms": ["RN5-8S1", "RNA5-8S5"],
+  "dbxrefs": ["HGNC:HGNC:53533", "RefSeq:NR_003285"]
+},
+{
+  "uuid": "e9833860-a123-4402-be71-14c72bf35c98",
+  "status": "released",
+  "symbol": "RNA5S1",
+  "organism": "human",
+  "geneid": "100169751",
+  "synonyms": ["RN5S1"],
+  "dbxrefs": ["HGNC:HGNC:34362", "ENSEMBL:ENSG00000199352", "RefSeq:NR_023363"]
+},
+{
+  "uuid": "6461de1a-7c5c-4abb-9506-f16f8d7c1da7",
+  "status": "released",
+  "symbol": "RNU1-1",
+  "organism": "human",
+  "geneid": "26871",
+  "synonyms": ["HSD1", "HU1-1", "RNU1", "RNU1A", "RNU1A3", "RNU1G4", "Rnu1a1", "U1", "U1A1"],
+  "dbxrefs": ["HGNC:HGNC:10120", "ENSEMBL:ENSG00000206652", "RefSeq:NR_004430"]
+},
+{
+  "uuid": "5812b697-cd0c-417c-a231-711bc0afacf3",
+  "status": "released",
+  "symbol": "RNU2-1",
+  "organism": "human",
+  "geneid": "6066",
+  "synonyms": ["RNU2", "U2"],
+  "dbxrefs": ["MIM:180690", "HGNC:HGNC:10142", "ENSEMBL:ENSG00000274585", "RefSeq:NR_002716"]
+},
+{
+  "uuid": "ab493d18-fbe8-4d53-a847-5675009ac8d2",
+  "status": "released",
+  "symbol": "RNU4-1",
+  "organism": "human",
+  "geneid": "26835",
+  "synonyms": ["RNU4A", "RNU4B2", "U4", "U4BL"],
+  "dbxrefs": ["HGNC:HGNC:10192", "ENSEMBL:ENSG00000200795", "RefSeq:NR_003925"]
+},
+{
+  "uuid": "fb65b660-e245-4275-ad17-426b309c2f90",
+  "status": "released",
+  "symbol": "RNU4ATAC",
+  "organism": "human",
+  "geneid": "100151683",
+  "synonyms": ["MOPD1", "RFMN", "RNU4ATAC1", "TALS", "U4ATAC"],
+  "dbxrefs": ["MIM:601428", "HGNC:HGNC:34016", "ENSEMBL:ENSG00000264229", "RefSeq:NR_023343"]
+},
+{
+  "uuid": "d68a9602-f2fa-4c49-b55e-4ae590de211e",
+  "status": "released",
+  "symbol": "RNU5A-1",
+  "organism": "human",
+  "geneid": "26831",
+  "synonyms": ["RNU5", "RNU5A", "RNU5C", "U5A", "U5B1"],
+  "dbxrefs": ["MIM:180691", "HGNC:HGNC:10211", "ENSEMBL:ENSG00000199568", "RefSeq:NR_002756"]
+},
+{
+  "uuid": "5d47b7dd-fe3a-4520-b243-05c8927c673e",
+  "status": "released",
+  "symbol": "RNU6-1",
+  "organism": "human",
+  "geneid": "26827",
+  "synonyms": ["RNU6", "RNU6A", "U6", "U6-1"],
+  "dbxrefs": ["MIM:180692", "HGNC:HGNC:10227", "ENSEMBL:ENSG00000206625", "RefSeq:NR_004394"]
+},
+{
+  "uuid": "a469aa70-c618-46c6-8157-6f7fead8f4e4",
+  "status": "released",
+  "symbol": "RNU11",
+  "organism": "human",
+  "geneid": "26824",
+  "synonyms": ["RNU11-1", "U11"],
+  "dbxrefs": ["HGNC:HGNC:10108", "ENSEMBL:ENSG00000274978", "RefSeq:NR_004407"]
+},
+{
+  "uuid": "5ad4f405-741e-4877-bad1-953bedce2899",
+  "status": "released",
+  "symbol": "RNU105B",
+  "organism": "human",
+  "geneid": "26767",
+  "synonyms": ["105B", "E1-2"],
+  "dbxrefs": ["HGNC:HGNC:10103", "ENSEMBL:ENSG00000201348", "RefSeq:NR_004386"]
+},
+{
+  "uuid": "0372fbb8-e89f-43fb-bc7f-f95aec0ea92e",
+  "status": "released",
+  "symbol": "RNY1",
+  "organism": "human",
+  "geneid": "6084",
+  "synonyms": ["HY1", "Y1"],
+  "dbxrefs": ["MIM:601821", "HGNC:HGNC:10242", "ENSEMBL:ENSG00000201098", "RefSeq:NR_004391"]
+},
+{
+  "uuid": "5c44a122-d27a-4d6b-86b5-9b0db1f0e42a",
+  "status": "released",
+  "symbol": "SCARNA1",
+  "organism": "human",
+  "geneid": "677774",
+  "synonyms": ["ACA35"],
+  "dbxrefs": ["HGNC:HGNC:32555", "ENSEMBL:ENSG00000252947", "RefSeq:NR_002997"]
+},
+{
+  "uuid": "ff8c979b-2172-448c-bbd7-329a9fa094a6",
+  "status": "released",
+  "symbol": "SNORA1",
+  "organism": "human",
+  "geneid": "677792",
+  "synonyms": ["ACA1"],
+  "dbxrefs": ["HGNC:HGNC:32557", "ENSEMBL:ENSG00000206834", "RefSeq:NR_003026"]
+},
+{
+  "uuid": "4afdd01a-2511-4ee9-a6fa-e6f7201d89e8",
+  "status": "released",
+  "symbol": "SNORD1A",
+  "organism": "human",
+  "geneid": "677848",
+  "synonyms": ["R38A", "snR38A"],
+  "dbxrefs": ["HGNC:HGNC:32556", "ENSEMBL:ENSG00000278261", "RefSeq:NR_004395"]
+},
+{
+  "uuid": "74daa5bf-f36f-4bd4-aa72-dba6c6232dc4",
+  "status": "released",
+  "symbol": "VTRNA1-1",
+  "organism": "human",
+  "geneid": "56664",
+  "synonyms": ["HVG1", "VAULTRC1", "VR1", "hvg-1", "vRNA"],
+  "dbxrefs": ["MIM:612695", "HGNC:HGNC:12654", "ENSEMBL:ENSG00000199990", "RefSeq:NR_026703"]
+},
+{
+  "uuid": "de15fbe2-0d2d-4573-8d39-01f5c957061c",
+  "status": "released",
+  "symbol": "WASIR1",
+  "organism": "human",
+  "geneid": "100128260",
+  "synonyms": ["NCRNA00286B"],
+  "dbxrefs": ["HGNC:HGNC:38513", "ENSEMBL:ENSG00000185203", "RefSeq:NR_138048"]
+}]
